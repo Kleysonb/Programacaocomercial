@@ -6,11 +6,12 @@
 <body>
     <ul>
         {% for veiculo in object_list %}
-    <li>
-        {{ veiculo }}
-    </li>
+        <li>{{ veiculo }} - <a href="/veiculos/{{ veiculo.pk }}">editar</a>  -  <a href="/veiculos/excluir/{{ veiculo.pk }}">deletar</a></li>
+        
         {% endfor %}
     </ul>
-    Total: {{ total }}
+    Total: {{ object_list.count }}
+    <br>
+    <a href="/veiculos/novo">Novo Veículo</a>
 </body>
 </html>
